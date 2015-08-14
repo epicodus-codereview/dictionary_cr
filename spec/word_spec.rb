@@ -13,7 +13,7 @@ describe(Word) do
   describe('.clear') do
     it('clears words array of entries') do
       new_word = Word.new({:word => 'JFK', :definition => 'political leader'})
-      new_contact.save()
+      new_word.save()
       Contacts.clear()
       expect(Contacts.all()).to(eq([]))
     end

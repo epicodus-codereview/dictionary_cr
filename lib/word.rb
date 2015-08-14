@@ -17,4 +17,8 @@ class Word
     @@words
   end
 
+  define_singleton_method(:clear) do
+    @@words = []
+  end
+
 end
