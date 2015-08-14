@@ -19,6 +19,16 @@ describe(Word) do
     end
   end
 
+  describe('.find') do
+    it('finds a word based on its id') do
+      new_word = Word.new({:word => 'harmony'})
+      new_word.save()
+      new_word2 = Word.new(:word => 'buddha')
+      new_word2.save()
+      expect(Contacts.find(2)).to(eq(new_word2))
+    end
+  end
+
   describe('#word') do
     it('returns a word for the user') do
       new_word = Word.new({:word => 'autonomous'})
