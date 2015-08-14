@@ -18,7 +18,7 @@ describe('show the add word path', {:type => :feature}) do
     click_link('islam')
     fill_in('definition', :with => 'a religion')
     click_button('add definition')
-    expect(page).to have_contect('a religion')
+    expect(page).to have_content('a religion')
   end
 
 end
