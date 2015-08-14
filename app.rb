@@ -26,7 +26,7 @@ post('/add_definition') do
   @new_definition = params.fetch('definition')
   word_definition = Definition.new({:definition => @new_definition})
   id = params.fetch('word_id')
-  @word = Word.find(id).to_i()
-  @word.add_definition(word_definition)
+  @word = Word.find(id.to_i())
+  @word.add_definition(word_definition.to_s())
   redirect('/word/' + @word.id().to_s())
 end

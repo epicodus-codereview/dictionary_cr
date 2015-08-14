@@ -36,13 +36,10 @@ class Word
     found_word
   end
 
-#why is the argument error method pointing here? is this not getting an argument? or somewhere else in process?
-  define_method(:add_definition) do |definition|
-    @definitions.push(definition)
+#Something is wrong with this, but I don't know what is causing the error message.
+#Why is it not getting an argument?
+  define_method(:add_definition) do |word_definition|
+    @definitions.push(word_definition)
   end
-#testing to see if a different method can be seen
-  define_method(:show_word_definition) do
-    @definitions
-  end
-  
+
 end
