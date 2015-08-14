@@ -11,8 +11,8 @@ get('/') do
 end
 
 post('/add_word') do
-  word = params.fetch('word')
-  @word = Word.new({:word => word})
+  @word = params.fetch('word')
+  @word = Word.new({:word => @word})
   @word.save()
   redirect('/')
 end
@@ -23,9 +23,10 @@ get('/word/:id') do
 end
 
 post('/add_definition') do
-  new_definition = params.fetch('definition')
-  definition = Definition.new({:definition => new_definition})
-  @word = Word.find(id.to_i())
-  @word.add_definition(definition)
-  redirect('/word/' + @contact.id().to_s())
+  @new_definition = params.fetch('definition')
+  word_definition = Definition.new({:definition => @new_definition})
+  id = params.fetch('word_id')
+  @word = Word.find(id).to_i()
+  @word.add_definition(word_definition)
+  redirect('/word/' + @word.id().to_s())
 end
