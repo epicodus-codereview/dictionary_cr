@@ -32,7 +32,7 @@ describe(Word) do
   describe('#word') do
     it('returns a word for the user') do
       new_word = Word.new({:word => 'jesus', :definition => 'christian leader'})
-      expect(new_word.word()).to(eq('autonomous'))
+      expect(new_word.word()).to(eq('jesus'))
     end
   end
 
