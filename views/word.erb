@@ -1,8 +1,8 @@
 <h2><%= @word.word() %></h2>
 
-<% @word.add_definition().each do |definition| %>
+<% @word.show_word_definition().each do |definition| %>
 
-<li><%= definition() %></li>
+<li><%= print definition() %></li>
 
 <% end %>
 

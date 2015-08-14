@@ -40,5 +40,9 @@ class Word
   define_method(:add_definition) do |definition|
     @definitions.push(definition)
   end
-
+#testing to see if a different method can be seen
+  define_method(:show_word_definition) do
+    @definitions
+  end
+  
 end
