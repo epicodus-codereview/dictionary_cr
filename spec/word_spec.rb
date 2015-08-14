@@ -14,8 +14,8 @@ describe(Word) do
     it('clears words array of entries') do
       new_word = Word.new({:word => 'JFK', :definition => 'political leader'})
       new_word.save()
-      Contacts.clear()
-      expect(Contacts.all()).to(eq([]))
+      Word.clear()
+      expect(Word.all()).to(eq([]))
     end
   end
 
@@ -25,7 +25,7 @@ describe(Word) do
       new_word.save()
       new_word = Word.new({:word => 'buddha', :definition => 'religious leader'})
       new_word2.save()
-      expect(Contacts.find(2)).to(eq(new_word2))
+      expect(Word.find(2)).to(eq(new_word2))
     end
   end
 
