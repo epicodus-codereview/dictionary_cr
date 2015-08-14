@@ -23,7 +23,7 @@ describe(Word) do
     it('finds a word based on its id') do
       new_word = Word.new({:word => 'harmony', :definition => 'peace'})
       new_word.save()
-      new_word = Word.new({:word => 'buddha', :definition => 'religious leader'})
+      new_word2 = Word.new({:word => 'buddha', :definition => 'religious leader'})
       new_word2.save()
       expect(Word.find(2)).to(eq(new_word2))
     end
