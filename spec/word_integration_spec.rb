@@ -3,7 +3,7 @@ require('./app')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-describe('the add word path', {:type => :feature}) do
+describe('show the add word path', {:type => :feature}) do
   it('adds a word to a list') do
     visit('/')
     fill_in('word', :with => 'Hitchens')
