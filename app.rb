@@ -10,9 +10,16 @@ get('/') do
   erb(:index)
 end
 
-post('new_word') do
+post('add_word') do
   word = params.fetch('word')
-  @word = Word.new({:word => 'Plato'})
+  @word = Word.new({:word => word})
   @word.save()
-  erb(:index)
+  redirect('/')
+end
+
+post('/add_definition') do
+  new_definition = params.fetch('definition')
+  definition = Definition.new({:definition => new_definition})
+  @word.add_definition(definition)
+  erb(:word)
 end
