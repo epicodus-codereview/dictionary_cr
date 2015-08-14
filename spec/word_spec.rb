@@ -3,6 +3,9 @@ require('word')
 require('definition')
 
 describe(Word) do
+  before() do
+    Word.clear()
+  end
 
   describe('.all') do
     it('returns the word array empty') do
