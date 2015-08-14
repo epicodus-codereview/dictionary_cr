@@ -38,6 +38,7 @@ describe(Word) do
 
   describe('#save') do
     it('saves a word to the word array') do
+      Word.clear()
       new_word = Word.new({:word => 'god', :definition => 'diety for religion'})
       new_word.save()
       expect(Word.all()).to(eq([new_word]))
