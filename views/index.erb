@@ -1,0 +1,14 @@
+<h1>Word List</h1>
+
+<ul>
+  <% @@words.each() do |word| %>
+    <li><a href='/word/<%= word.id() %>'><%= word.word() %></li>
+  <% end %>
+</ul>
+
+<h2>Add a word:</h2>
+<form action='/add_word' method="post">
+  <input type='text' name='word' id='word' placeholder='Ex. autonomous'>
+  <button class='btn btn-success' type='submit'>add word</button>
+
+</form>
