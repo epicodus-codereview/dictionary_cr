@@ -10,6 +10,15 @@ describe(Word) do
     end
   end
 
+  describe('.clear') do
+    it('clears words array of entries') do
+      new_word = Word.new({:word => 'justice'})
+      new_contact.save()
+      Contacts.clear()
+      expect(Contacts.all()).to(eq([]))
+    end
+  end
+
   describe('#word') do
     it('returns a word for the user') do
       new_word = Word.new({:word => 'autonomous'})
