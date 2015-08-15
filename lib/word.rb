@@ -3,14 +3,13 @@ class Word
   @@words = []
   @@id_count = 0
 
-  attr_reader :word, :id
+  attr_reader :word, :id, :definitions
 
   define_method(:initialize) do |attributes|
     @word = attributes.fetch(:word)
     @id = @@id_count + 1
     @@id_count += 1
     @definitions = []
-
   end
 
   define_singleton_method(:all) do
@@ -36,8 +35,7 @@ class Word
     found_word
   end
 
-#Something is wrong with this, but I don't know what is causing the error message.
-#Why is it not getting an argument?
+# method below was fine; the problem was actually in app.rb & word.erb
   define_method(:add_definition) do |word_definition|
     @definitions.push(word_definition)
   end

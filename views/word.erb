@@ -1,8 +1,8 @@
 <h2><%= @word.word() %></h2>
 
-<% @word.add_definition().each do |definition| %>
+<% @word.definitions().each do |definition| %>
 
-<li><%= puts definition.inspect %></li>
+<li><%= definition.definition() %></li>  
 
 <% end %>
 
@@ -14,3 +14,6 @@
 </form>
 
 <a href="/">Go Back</a>
+
+
+<!-- changed to loop through a word object's definitions array and display each definition -->

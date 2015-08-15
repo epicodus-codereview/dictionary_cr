@@ -1,7 +1,7 @@
 <h1>Word List</h1>
 
 <ul>
-  <% @@words.each() do |word| %>
+  <% @words.each() do |word| %>
     <li><a href='/word/<%= word.id() %>'><%= word.word() %></a></li>
   <% end %>
 </ul>

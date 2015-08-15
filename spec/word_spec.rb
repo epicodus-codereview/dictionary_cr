@@ -48,11 +48,15 @@ describe(Word) do
     end
   end
 
+  # you want to add a definition object to the word object, not a string
+  # also you want to check that the word has correctly stored the new definition rather than simply checking the return value of the add_definition method
   describe('#add_definition') do
     it('adds a definition to a word') do
       new_word = Word.new({:word => 'muhammad', :definition => 'islam leader'})
       new_word.save()
-      expect(new_word.add_definition('islam leader')).to(eq(['islam leader']))
+      new_definition = Definition.new(:definition => 'islam leader')
+      new_word.add_definition(new_definition)
+      expect(new_word.definitions()).to(eq([new_definition]))
     end
   end
 
